@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+// get config vars
+dotenv.config();
 const path = require('path');
 
 const express = require('express');
@@ -9,10 +13,7 @@ const sequelize = require('./util/database');
 const userRoutes = require('./routes/user')
 
 const app = express();
-/*const dotenv = require('dotenv');
 
-// get config vars
-dotenv.config();*/
 
 
 app.use(cors());
