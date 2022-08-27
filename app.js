@@ -7,10 +7,11 @@ const path = require('path');
 const express = require('express');
 var cors = require('cors')
 const sequelize = require('./util/database');
-//const User = require('./models/users');
-//const Expense = require('./models/expenses');
+const User  =  require('./models/users')
+const Expense = require('./models/expenses')
 
 const userRoutes = require('./routes/user')
+
 
 const app = express();
 
@@ -23,8 +24,8 @@ app.use(express.json());  //this is for handling jsons
 
 app.use('/user', userRoutes)
 
-//User.hasMany(Expense);
-//Expense.belongsTo(User);
+User.hasMany(Expense);
+Expense.belongsTo(User);
 
 
 sequelize.sync()
