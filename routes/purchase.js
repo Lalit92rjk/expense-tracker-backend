@@ -1,13 +1,13 @@
-const express  =  require('express');
+const express = require('express');
 
-const purchasecontroller  = require('../controller/purchase');
+const purchaseController = require('../controller/purchase');
 
-const authenticatemiddleware  =  require('../middleware/auth');
+const authenticatemiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-router.get('/premiummembership',authenticatemiddleware.authenticate,purchasecontroller.purchasepremium);
+router.get('/premiummembership', authenticatemiddleware.authenticate,purchaseController.purchasepremium);
 
-router.post('/updatetransactions',authenticatemiddleware.authenticate,purchasecontroller.updateTransactionStatus);
+router.post('/updatetransactionstatus', authenticatemiddleware.authenticate, purchaseController.updateTransactionStatus)
 
-module.exports =  router;
+module.exports = router;
