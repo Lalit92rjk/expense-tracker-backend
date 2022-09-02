@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+// get config vars
+dotenv.config();
 const fs= require('fs');
 const path = require('path');
 
@@ -24,10 +28,6 @@ const accessLogStream= fs.createWriteStream(path.join(__dirname, 'access.log'), 
 //const certificate= fs.readFileSync('server.cert');
 
 const app = express();
-const dotenv = require('dotenv');
-
-// get config vars
-dotenv.config();
 
 
 app.use(cors());
