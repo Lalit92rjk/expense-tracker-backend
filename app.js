@@ -43,6 +43,11 @@ app.use('/purchase', purchaseRoutes)
 
 app.use('/password', resetPasswordRoutes);
 
+app.use((req,res)=>{
+    console.log('urlll',req.url);
+    res.sendFile(path.join(__dirname, `public/${req.url}`));
+})
+
 app.use(helmet());
 app.use(compression());
 app.use(morgan('combined', {stream: accessLogStream}));
