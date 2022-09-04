@@ -45,7 +45,7 @@ app.use('/password', resetPasswordRoutes);
 
 app.use((req,res)=>{
     console.log('urlll',req.url);
-    console.log('polled succeesfully');
+    console.log('polled succeesfully log');
     res.sendFile(path.join(__dirname, `public/${req.url}`));
 })
 
